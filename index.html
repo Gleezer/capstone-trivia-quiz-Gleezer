@@ -12,19 +12,32 @@
     <meta name="author" content="Kenzie" />
     <meta name="keywords" content="Kenzie" />
 
-    <!-- Title Page-->
-    <title>Kenzie JavaScript Page</title>
-
-    <!-- CSS-->
-    <link href="style.css" rel="stylesheet" media="all" />
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js"></script>
   </head>
 
   <body>
-    <h1>Open the Developer Tools to see the console output.</h1>
-    <h3>
-      Either right click and select "Inspect" or use the shortcut Option + ⌘ + J
-      (on macOS), or Shift + CTRL + J (on Windows/Linux).
-    </h3>
-    <script src="code.js"></script>
-  </body>
+    <header>
+        <div class="title">
+            <h1>Welcome to My Trivia Game</h1>
+           
+        </div>
+       
+    </header>
+    <main>
+        <section>
+            <h2></h2>
+            <p class="clue"></p>
+            <input placeholder="Enter answer here">
+            <button>Submit</button>
+            <p class="answer hidden"></p>
+            <div class="score">
+              <h3></h3>
+          </div>
+        </section>
+
+        
+    </main>
+</body>
 </html>
