@@ -19,7 +19,7 @@ function gameStart() {
     function newQuestion() {
         answer.textContent = ""
         let request = new XMLHttpRequest();
-        request.open('GET', "http://jservice.io/api/random");
+        request.open('GET', "https://jservice.io/api/random");
         request.addEventListener('load', function () {
             console.log('fetching new question...');
             let response = JSON.parse(request.responseText);
@@ -40,25 +40,26 @@ function gameStart() {
         score.textContent =  + counter;
         question.textContent = answerBlock.category.title;
         questionLine.textContent = answerBlock.question;
-        console.log("current value of answer: " + answerBlock.answer);
         submit.addEventListener('click', submitAnswer);
     };
 
     function submitAnswer() {
         
         if (input.value.toLowerCase() != answerBlock.answer.toLowerCase()) {
-            answer.textContent = `Sorry Wrong Answer. The correct answer is: ` + answerBlock.answer;
+            answer.textContent = `Sorry Wrong Answer. The Correct Answer Is: ` + answerBlock.answer;
             answer.classList.remove('hidden');
             setTimeout(newQuestion, 3500);
             counter = 0
         } else {
-           increaseScore();
-            newQuestion();
+            answer.textContent = `You are Correct!`;
+            answer.classList.remove('hidden');
+            increaseScore();
+            setTimeout(newQuestion, 3500);
         };
     };
 
     function increaseScore() {
-       
+        answer.textContent = `You are Correct!`;
         counter += 1;
         score.textContent = + counter;
     };
